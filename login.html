@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Kedai Licous</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" />
+  <link rel="stylesheet" href="styles/my-styles.css" />
+  <link rel="stylesheet" href="styles/mediaqueries.css" />
+</head>
+
+<body bgcolor="#ffac00">
+  <div class="full-height full-width">
+    <span class="banner col-7 col-s-7 left">
+      <div class="logo-container">
+        <img src="./assets/images/icon.png" class="logo" />
+      </div>
+    </span>
+    <span class="col-5 col-s-5 left">
+      <div class="login-container">
+        <div class="glass card">
+          <p class="title">Login</p>
+          <form action="#">
+            <div class="form-container input-margin-bottom">
+              <input id="Username" placeholder="Masukan Username" />
+              <label for="Username">Username</label>
+              <p id="Username-error" class="error-text"></p>
+            </div>
+            <div class="form-container">
+              <input id="Password" placeholder="Masukan Password" type="password" />
+              <label for="Password">Password</label>
+              <p id="Password-error" class="error-text"></p>
+            </div>
+            <div class="default-link">
+              <a href="#" class="default-link">Lupa Password ?</a>
+            </div>
+            <input type="button" value="Login" onclick="validate(['Username', 'Password'])" />
+            <center>
+              <a href="#" class="subtitle">Atau</a>
+            </center>
+          </form>
+          <a href="register.html">
+            <input type="button" value="Daftar Sekarang" onclick="window.location.href='register.html'" />
+          </a>
+          <script>
+            function validate(formArray) {
+              let error = []
+              formArray.forEach(element => {
+                let form = document.getElementById(element);
+                if (!form.value) {
+                  error.push(element);
+                  document.getElementById(`${element}-error`).innerHTML = `${element} harus di isi`
+                }
+                else {
+                  document.getElementById(`${element}-error`).innerHTML = ``
+                }
+              });
+              if (error.length < 1) {
+                window.location.href = 'home.html'
+              }
+            }
+          </script>
+        </div>
+      </div>
+    </span>
+  </div>
+</body>
+
+</html>
