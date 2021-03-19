@@ -5,7 +5,7 @@ body {
   margin: 0;
 }
 * {
-  font-family: "Poppins";
+  font-family: "Roboto";
 }
 .full-height {
   min-height: 100%;
@@ -56,7 +56,9 @@ body {
 }
 .title {
   font-size: 20px;
-  margin-bottom: 20px;
+  font-weight: 800;
+  color: rgb(70, 70, 70);
+  margin-bottom: 24px;
 }
 .form-container {
   display: flex;
@@ -67,6 +69,7 @@ body {
   margin-bottom: 8%;
 }
 label {
+  font-size: 12px; 
   position: absolute;
   transition: 0.2s;
   left: 15px;
@@ -83,7 +86,7 @@ ul:not(.dropdown),
 input {
   background: none;
   border: 1px solid grey;
-  border-radius: 8px;
+  border-radius: 4px;
   list-style: none;
   padding: 15px 0px 15px 10px;
 }
@@ -106,9 +109,10 @@ ul li ul {
 }
 input:focus {
   outline: none;
-  border: 2px solid #2ecc71;
+  border: 1px solid #ffbb45;
   background: none;
-  border-radius: 8px;
+  font-size: 12px;
+  border-radius: 4px;
   padding: 15px 0px 15px 10px;
 }
 input:placeholder-shown {
@@ -122,11 +126,11 @@ input:focus + label {
 input[type="submit"],
 input[type="button"] {
   width: 100%;
-  margin-top: 2%;
-  background-color: #2ecc71;
+  margin-top: 4%;
+  background-color: #ffd080;
   border: 0;
-  font-size: 16px;
-  color: white;
+  font-size: 12px;
+  color: #4d4d4d;
 }
 center {
   margin-top: 2%;
@@ -140,6 +144,7 @@ center {
 }
 .default-link {
   margin-top: 4%;
+  font-size: 12px;
   text-align: right;
   text-decoration: none;
   color: #757575;
@@ -150,11 +155,27 @@ center {
 }
 
 /* new class */
+.signup-button:hover {
+  background-color: rgb(255, 180, 51);
+}
 .button:hover {
   cursor: pointer;
 }
 
+#login-button {
+  background-color:rgb(212, 212, 212);
+}
+#login-button:hover {
+  background-color: rgb(189, 189, 189);
+}
+
+
 /* use for sidebar */
+
+.link {
+  font-size: 13px;
+  font-weight: 300;
+}
 
 .sidebar-logo {
   width: 100%;
@@ -173,8 +194,8 @@ center {
   margin: 0;
   padding: 0;
   width: 250px;
-  background: rgba(255, 172, 0, 0.75);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  background: rgba(255, 187, 69);
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   position: fixed;

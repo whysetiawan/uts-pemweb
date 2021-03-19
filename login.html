@@ -2,9 +2,9 @@
 <html>
 
 <head>
-  <title>Kedai Licous</title>
+  <title>Masuk</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
   <link rel="stylesheet" href="styles/my-styles.css" />
   <link rel="stylesheet" href="styles/mediaqueries.css" />
 </head>
@@ -19,7 +19,7 @@
     <span class="col-5 col-s-5 left">
       <div class="login-container">
         <div class="glass card">
-          <p class="title">Log In</p>
+          <p class="title">Masuk</p>
           <form action="#">
             <div class="form-container input-margin-bottom">
               <input id="Username" placeholder="Masukan Username" />
@@ -34,14 +34,14 @@
             <div class="default-link">
               <a href="#" class="default-link">Lupa Password ?</a>
             </div>
-            <input class="button" type="button" value="Login" onclick="validate(['Username', 'Password'])" />
-            <center>
-              <a href="#" class="subtitle">Atau</a>
-            </center>
+                <input id="login-button" class="button" type="button" value="Masuk" onclick="validate(['Username', 'Password'])" />
+                <!-- <center>
+                  <a href="#" class="subtitle">Atau</a>
+                </center> -->
+                <a href="register.html">
+                  <input class="button signup-button" type="button" value="Daftar Sekarang" onclick="window.location.href='register.html'" />
+                </a>
           </form>
-          <a href="register.html">
-            <input class="button" type="button" value="Daftar Sekarang" onclick="window.location.href='register.html'" />
-          </a>
           <script>
             function validate(formArray) {
               let error = []
