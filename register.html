@@ -24,30 +24,30 @@
           <form action="#">
 
             <div class="form-container input-margin-bottom">
-              <input id="name" placeholder="Masukan Nama" />
-              <label for="name">Nama</label>
+              <input id="Nama" placeholder="Masukan Nama" />
+              <label for="Nama">Nama</label>
+              <p id="Nama-reg-error" class="error-text"></p>
             </div>
             <div class="form-container input-margin-bottom">
-              <input id="username" placeholder="Masukan Username" />
-              <label for="username">Username</label>
+              <input id="Username" placeholder="Masukan Username" />
+              <label for="Username">Username</label>
+              <p id="Username-reg-error" class="error-text"></p>
             </div>
             <div class="form-container input-margin-bottom">
-              <input id="email" placeholder="Masukkan Email">
-              <label for="email">Email</label>
+              <input id="Email" placeholder="Masukkan Email">
+              <label for="Email">Email</label>
+              <p id="Email-reg-error" class="error-text"></p>
             </div>
             <div class="form-container">
-              <input id="password" placeholder="Masukan Password" type="password" />
-              <label for="password">Password</label>
+              <input id="Password" placeholder="Masukan Password" type="password" />
+              <label for="Password">Password</label>
+              <p id="Password-reg-error" class="error-text"></p>
             </div>
             <div class="default-link">
             </div>
-            <input class="button signup-button" type="button" value="Daftar" onclick="msg()" />
+            <input class="button signup-button" type="button" value="Daftar" onclick="validateSignup(['Nama','Username','Email','Password'])" />
           </form>
-          <script>
-            function msg() {
-              alert('Daftar Berhasil!');
-            }
-          </script>
+          <script type="text/javascript" src=".//script/validate-signup.js"></script>
         </div>
       </div>
     </span>
