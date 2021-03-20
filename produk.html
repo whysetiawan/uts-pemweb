@@ -17,17 +17,13 @@
       <div class="sidebar-logo">
         <img src="./assets/images/icon.png" class="sidebar-logo-img" />
       </div>
-      <a class="link active" id="home" href="home.html">Beranda</a>
-      <a class="link" href="produk.html">Tambah Produk</a>
-      <a class="link">Laporan</a>
-      <a class="link">Help Desk</a>
+      <a class="link " href="home.html" id="home" onclick="displayTitle('Beranda')" href="#home">Beranda</a>
+      <a class="link active" href="#add" onclick="displayTitle('Tambah Produk')">Tambah Produk</a>
+      <a class="link" href="#report" onclick="displayTitle('Laporan')">Laporan</a>
+      <a class="link" href="#helpdesk" onclick="displayTitle('Help Desk')">Help Desk</a>
     </div>
     <span class=" col-3 left ">
       <pre></pre>
-    </span>
-    <span class="col-9 left">
-      <p id="title"></p>
-      <canvas id="myChart"></canvas>
     </span>
   </div>
 
