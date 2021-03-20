@@ -42,24 +42,7 @@
                   <input class="button signup-button" type="button" value="Daftar Sekarang" onclick="window.location.href='register.html'" />
                 </a>
           </form>
-          <script>
-            function validate(formArray) {
-              let error = []
-              formArray.forEach(element => {
-                let form = document.getElementById(element);
-                if (!form.value) {
-                  error.push(element);
-                  document.getElementById(`${element}-error`).innerHTML = `${element} harus di isi`
-                }
-                else {
-                  document.getElementById(`${element}-error`).innerHTML = ``
-                }
-              });
-              if (error.length < 1) {
-                window.location.href = 'home.html'
-              }
-            }
-          </script>
+          <script type="text/javascript" src="/validate.js"></script>
         </div>
       </div>
     </span>
