@@ -8,35 +8,44 @@
   <link rel="stylesheet" href="styles/my-styles.css" />
   <link rel="stylesheet" href="styles/mediaqueries.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+
 
 </head>
 
 <body>
   <div class="full-height full-width">
-    <div class="sidebar">
-      <div class="sidebar-logo">
-        <img src="./assets/images/icon.png" class="sidebar-logo-img" />
+    <div class="col-3">
+      <div class="sidebar">
+        <div class="sidebar-logo">
+          <img src="./assets/images/icon.png" class="sidebar-logo-img" />
+        </div>
+        <a class="link active" id="beranda" href="#beranda">Beranda</a>
+        <a class="link" id="produk" href="#produk">Produk</a>
+        <a class="link" id="report" href="#report" onclick="displayTitle('Laporan')">Laporan</a>
+        <a class="link" id="kasir" href="#kasir" onclick="displayTitle('Help Desk')">Kasir</a>
       </div>
-      <a class="link active" id="home" onclick="displayTitle('beranda')" href="#home">Beranda</a>
-      <a class="link" href="#add" onclick="displayTitle('Tambah Produk')">Tambah Produk</a>
-      <a class="link" href="#report" onclick="displayTitle('Laporan')">Laporan</a>
-      <a class="link" href="#helpdesk" onclick="displayTitle('Help Desk')">Help Desk</a>
     </div>
-    <span class="col-3 left ">
+    <span class="col-3 col-s-12 left ">
       <pre></pre>
     </span>
     <span class="col-9 left">
-      <p id="title"></p>
-      <canvas id="myChart"></canvas>
+      <div id="content"></div>
+      <!-- <canvas id="myChart"></canvas> -->
     </span>
   </div>
 
   <script type="text/javascript">
     const linkArr = $('.link');
     for (let i = 0; i < linkArr.length; i++) {
-      linkArr[i].addEventListener("click", () => {
+      linkArr[i].addEventListener("click", function () {
         const current = document.getElementsByClassName("active");
+        const element = $(linkArr[i]).attr('id');
+        const classname = $(linkArr[i]).attr('class');
+        if (classname.includes('active')) {
+          return;
+        }
+        $("#content").load(`home/${element}.html`);
         if (current.length > 0) {
           current[0].className = current[0].className.replace(" active", "");
         }
@@ -44,35 +53,17 @@
       })
 
     }
-    window.onload = () => {
-      document.getElementById("title").innerHTML = "Beranda"
-    }
+    $(document).ready(function () {
+      $("#content").load(`home/beranda.html`);
+    })
     function displayTitle(title) {
-      $("title").load(`${title}.html`)
+      if (title == 'beranda') {
+        $("#content").load(`home/beranda.html`);
+
+      }
     }
   </script>
 
-  <script type="text/javascript">
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const chart = new Chart(ctx, {
-      // The type of chart we want to create
-      type: 'line',
-
-      // The data for our dataset
-      data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-          label: 'Penghasilan Setahun',
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
-          data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-      },
-
-      // Configuration options go here
-      options: {}
-    });
-  </script>
 </body>
 
 </html>
