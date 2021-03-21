@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Lato");
 
 body {
   min-width: 100%;
@@ -6,8 +6,14 @@ body {
   padding: 0;
   margin: 0;
 }
+.background {
+  background-image: url(../assets/images/bg.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
 * {
-  font-family: "Roboto";
+  font-family: "Lato";
 }
 .full-height {
   min-height: 100%;
@@ -25,12 +31,12 @@ body {
   justify-content: center;
 }
 .glass {
-  background: rgb(255, 255, 255);
+  background: rgb(255, 255, 255, 0.2);
   /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  /* border-radius: 10px; */
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
   box-sizing: border-box;
 }
 .login-container {
@@ -59,7 +65,7 @@ body {
 .title {
   font-size: 20px;
   font-weight: 800;
-  color: rgb(70, 70, 70);
+  color: rgb(0, 0, 0);
   margin-bottom: 24px;
 }
 .form-container {
@@ -68,7 +74,7 @@ body {
   position: relative;
 }
 .input-margin-bottom {
-  margin-bottom: 6%;
+  margin-bottom: 8%;
 }
 form p {
   margin: 1.5px;
@@ -90,8 +96,8 @@ input:focus::-webkit-input-placeholder {
 ul:not(.dropdown),
 input {
   background: none;
-  border: 1px solid grey;
-  border-radius: 4px;
+  border: 1.3px solid #262626;
+  border-radius: 6px;
   list-style: none;
   padding: 15px 0px 15px 10px;
 }
@@ -114,10 +120,10 @@ ul li ul {
 }
 input:focus {
   outline: none;
-  border: 1px solid #ffbb45;
+  border: 1.5px solid #262626;
   background: none;
   font-size: 12px;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 15px 0px 15px 10px;
 }
 input:placeholder-shown {
@@ -125,17 +131,20 @@ input:placeholder-shown {
 }
 input:not(:placeholder-shown) + label,
 input:focus + label {
-  top: -25px;
-  left: -2px;
+  top: -20px;
+  left: 0px;
 }
 input[type="submit"],
 input[type="button"] {
   width: 100%;
   margin-top: 4%;
-  background-color: #ffd080;
+  background-color: rgb(75, 223, 75);
   border: 0;
   font-size: 12px;
-  color: #4d4d4d;
+  color: #0d0d0d;
+}
+.signup-button:hover {
+  background-color: rgb(55, 196, 55);
 }
 center {
   margin-top: 2%;
@@ -145,14 +154,14 @@ center {
   margin-top: 4%;
   text-align: center;
   text-decoration: none;
-  color: #757575;
+  color: rgb(255, 255, 255);
 }
 .default-link {
   margin-top: 4%;
   font-size: 12px;
   text-align: right;
   text-decoration: none;
-  color: #757575;
+  color: #0d0d0d;
 }
 .error-text {
   color: red;
@@ -160,18 +169,15 @@ center {
 }
 
 /* new class */
-.signup-button:hover {
-  background-color: rgb(255, 180, 51);
-}
 .button:hover {
   cursor: pointer;
 }
 
 #login-button {
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(221, 221, 221);
 }
 #login-button:hover {
-  background-color: rgb(189, 189, 189);
+  background-color: rgb(207, 207, 207);
 }
 
 /* use for sidebar */
@@ -198,7 +204,7 @@ center {
   margin: 0;
   padding: 0;
   width: 250px;
-  background: rgba(255, 187, 69);
+  background: rgba(255, 169, 68);
   /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
