@@ -3,7 +3,7 @@
   width: 100%;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
   /* For desktop: */
   .col-s-1 {
     width: 8.33%;
@@ -43,7 +43,7 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
   /* For tablets: */
   .col-1 {
     width: 8.33%;
