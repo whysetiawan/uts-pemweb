@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Daftar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+  <link rel="stylesheet" href="styles/my-styles.css" />
+  <link rel="stylesheet" href="styles/mediaqueries.css" />
+  <link rel="icon" href="assets/images/icon.png" type="image/x-icon" />
+</head>
+
+<body class="background">
+  <div class="full-height full-width">
+    <span class="banner col-7 col-s-7 left">
+      <div class="logo-container">
+        <img src="./assets/images/icon.png" class="logo" />
+      </div>
+    </span>
+    <span class="col-5 col-s-5 left">
+      <div class="login-container">
+        <div class="glass card">
+          <p class="title">Daftar Akun</p>
+          <form action="#">
+
+            <div class="form-container input-margin-bottom">
+              <input id="Nama" placeholder="Masukan Nama" />
+              <label for="Nama">Nama</label>
+              <p id="Nama-reg-error" class="error-text"></p>
+            </div>
+            <div class="form-container input-margin-bottom">
+              <input id="Username" placeholder="Masukan Username" />
+              <label for="Username">Username</label>
+              <p id="Username-reg-error" class="error-text"></p>
+            </div>
+            <div class="form-container input-margin-bottom">
+              <input id="Email" placeholder="Masukkan Email">
+              <label for="Email">Email</label>
+              <p id="Email-reg-error" class="error-text"></p>
+            </div>
+            <div class="form-container">
+              <input id="Password" placeholder="Masukan Password" type="password" />
+              <label for="Password">Password</label>
+              <p id="Password-reg-error" class="error-text"></p>
+            </div>
+            <div class="default-link">
+            </div>
+            <input class="button signup-button" type="button" value="Daftar" onclick="validateSignup(['Nama','Username','Email','Password'])" />
+          </form>
+          <script type="text/javascript" src=".//script/validate-signup.js"></script>
+        </div>
+      </div>
+    </span>
+  </div>
+</body>
+
+</html>
