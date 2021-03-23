@@ -24,6 +24,7 @@
         <a class="link" id="produk" href="#produk">Produk</a>
         <a class="link" id="report" href="#report" onclick="displayTitle('Laporan')">Laporan</a>
         <a class="link" id="kasir" href="#kasir" onclick="displayTitle('Help Desk')">Kasir</a>
+        <a class="link" id="logout" href="#logout" onclick="displayTitle('Keluar')">Keluar</a>
       </div>
     </div>
     <span class="col-3 col-s-12 left ">
@@ -59,7 +60,6 @@
     function displayTitle(title) {
       if (title == 'beranda') {
         $("#content").load(`home/beranda.html`);
-
       }
     }
   </script>
