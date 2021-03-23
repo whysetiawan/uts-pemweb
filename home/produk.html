@@ -10,6 +10,31 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script type="text/javascript" src=".//script/chart.js"></script>
+  <script type="text/javascript" src=".//script/products.js"></script>
+  <script>
+    $(document).ready(function () {
+      console.log(productArray);
+      const body = $("#table-body");
+      productArray.forEach(element => {
+        console.log(element.nama);
+        const newRow = document.createElement("tr");
+        body[0].appendChild(newRow);
+        let newName = document.createElement("td");
+        newName.textContent = element.nama;
+        newRow.appendChild(newName);
+        let newJenis = document.createElement("td");
+        newJenis.textContent = element.jenis;
+        newRow.appendChild(newJenis);
+        let newHarga = document.createElement("td");
+        newHarga.textContent = element.harga_produksi;
+        newRow.appendChild(newHarga);
+        let newJual = document.createElement("td");
+        newJual.textContent = element.harga_jual;
+        newRow.appendChild(newJual);
+      });
+
+    })
+  </script>
 </head>
 
 <body>
@@ -26,8 +51,8 @@
             <!-- <th></th> -->
           </tr>
         </thead>
-        <tbody>
-          <tr>
+        <tbody id="table-body">
+          <!-- <tr>
             <td>Seblak</td>
             <td>Foods</td>
             <td>Rp 5.000</td>
@@ -50,7 +75,7 @@
             <td>Foods</td>
             <td>Rp 5.000</td>
             <td>Rp 7.500</td>
-          </tr>
+          </tr> -->
           <!-- and so on... -->
         </tbody>
       </table>
