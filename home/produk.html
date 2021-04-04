@@ -2,119 +2,114 @@
 <html>
 
 <head>
-  <title>Masuk</title>
+  <title>Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-  <link rel="stylesheet" href=".//styles/my-styles.css" />
-  <link rel="stylesheet" href=".//styles/mediaqueries.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-  <script type="text/javascript" src=".//script/chart.js"></script>
-  <script type="text/javascript" src=".//script/products.js"></script>
+  <script type="text/javascript" src="../script/products.js"></script>
+  <link rel="stylesheet" href="../styles/my-styles.css" />
+  <link rel="stylesheet" href="../styles/mediaqueries.css" />
   <script>
-    $(document).ready(function () {
-      console.log(productArray);
-      const body = $("#table-body");
-      productArray.forEach(element => {
-        console.log(element.nama);
-        const newRow = document.createElement("tr");
-        body[0].appendChild(newRow);
-        let newName = document.createElement("td");
-        newName.textContent = element.nama;
-        newRow.appendChild(newName);
-        let newJenis = document.createElement("td");
-        newJenis.textContent = element.jenis;
-        newRow.appendChild(newJenis);
-        let newHarga = document.createElement("td");
-        newHarga.textContent = element.harga_produksi;
-        newRow.appendChild(newHarga);
-        let newJual = document.createElement("td");
-        newJual.textContent = element.harga_jual;
-        newRow.appendChild(newJual);
-      });
-
+    $(document).ready(() => {
+      // $('#paginate-link').click(() => paginate(productArray, 5, (i + 1)))
+      $('paginate-link').on('click', function () {
+        console.log('smth bau')
+      })
+      // showProducts(paginate(productArray, 5, 2));
+      showAddModal();
+      paginate(productArray, 5, 1);
     })
+
   </script>
 </head>
 
 <body>
-  <div class="full-height full-width">
-    <span class="col-12 col-s-12">
+  <div>
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <img src="../assets/images/icon.png" class="sidebar-logo-img" />
+      </div>
+      <a class="link " id="home" href="beranda.html">Beranda</a>
+      <a class="link active" href="produk.html">Tambah Produk</a>
+      <a class="link">Laporan</a>
+      <a class="link">Help Desk</a>
+    </div>
+    <span class="col-3 left ">
+      <pre></pre>
+    </span>
+    <span class="col-9 left">
       <h2>Produk</h2>
-      <div class="display-flex row space-between">
-        <div class="col-2">
+      <div class="col-12 display-flex row align-center default-static-margin-top default-static-margin-bottom">
+        <div class="col-6">
           <div class="form-container">
-            <input id="Nama" placeholder="Masukan Nama" />
-            <label for="Nama">Nama</label>
-            <p id="Nama-error" class="error-text"></p>
+            <input id="search" placeholder="Masukan Keyword Pencarian" />
+            <label for="search">Cari Produk</label>
           </div>
         </div>
-        <div class="col-2">
-
-          <div class="form-container">
-            <input id="Jenis" placeholder="Masukan Jenis" />
-            <label for="Jenis">Jenis</label>
-            <p id="Jenis-error" class="error-text"></p>
-          </div>
+        <div class="col-2 form-container horizontal-margin">
+          <input id="login-button" class="button" type="button" value="Cari" onclick="searchProducts('search')" />
         </div>
-        <div class="col-2">
-          <div class="form-container">
-            <input id="Harga-Produk" placeholder="Masukan Harga Produksi" />
-            <label for="Harga-Produk">Harga-Produk</label>
-            <p id="Harga-Produk-error" class="error-text"></p>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="form-container">
-            <input id="Harga-Jual" placeholder="Masukan Harga Jual" />
-            <label for="Harga-Jual">Harga-Jual</label>
-            <p id="Harga-Jual-error" class="error-text"></p>
-          </div>
-        </div>
-        <div class="col-2">
-
-          <input id="login-button" class="signup-button" type="button" value="Tambahkan" onclick="pushProducts()" />
+        <div class="col-2 form-container horizontal-margin">
+          <input id="show-add-btn" class="button" type="button" value="Tambahkan" onclick="showAddModal()" />
         </div>
       </div>
       <table class="styled-table">
         <thead>
           <tr>
+            <td>ID</td>
             <th>Nama</th>
             <th>Jenis</th>
             <th>Harga Produksi</th>
             <th>Harga Jual</th>
-            <!-- <th></th> -->
+            <th colspan="2">Action(WIP)</th>
           </tr>
         </thead>
         <tbody id="table-body">
-          <!-- <tr>
-            <td>Seblak</td>
-            <td>Foods</td>
-            <td>Rp 5.000</td>
-            <td>Rp 7.500</td>
-          </tr>
-          <tr>
-            <td>Coffee</td>
-            <td>Drinks</td>
-            <td>Rp 7.000</td>
-            <td>Rp 15.000</td>
-          </tr>
-          <tr>
-            <td>Seblak</td>
-            <td>Foods</td>
-            <td>Rp 5.000</td>
-            <td>Rp 7.500</td>
-          </tr>
-          <tr>
-            <td>Seblak</td>
-            <td>Foods</td>
-            <td>Rp 5.000</td>
-            <td>Rp 7.500</td>
-          </tr> -->
-          <!-- and so on... -->
+          <!-- display table -->
         </tbody>
       </table>
+      <!-- padination -->
+      <div class="pagination" id="paginate">
+      </div>
     </span>
+    <!-- modal start -->
+    <div id="modal-container" class="modal">
+
+      <div class="modal-content glass-modal card col-5">
+        <span class="close">&times;</span>
+        <p>Tambah Produk</p>
+        <div class="col-12">
+          <div class="form-container default-static-margin-top">
+            <input id="Nama" placeholder="Masukan Nama" />
+            <label for="Nama">Nama</label>
+            <p id="Nama-error" class="error-text"></p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-container default-static-margin-top">
+            <input id="Jenis" placeholder="Masukan Jenis" />
+            <label for="Jenis">Jenis</label>
+            <p id="Jenis-error" class="error-text"></p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-container default-static-margin-top">
+            <input id="Harga-Produk" placeholder="Masukan Harga Produksi" />
+            <label for="Harga-Produk">Harga Produk</label>
+            <p id="Harga-Produk-error" class="error-text"></p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-container default-static-margin-top">
+            <input id="Harga-Jual" placeholder="Masukan Harga Jual" />
+            <label for="Harga-Jual">Harga Jual</label>
+            <p id="Harga-Jual-error" class="error-text"></p>
+          </div>
+        </div>
+        <input id="show-add-btn" class="button" type="button" value="Simpan" onclick="pushProducts()" />
+      </div>
+    </div>
+
   </div>
 </body>
 

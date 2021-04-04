@@ -1,6 +1,6 @@
 
 
-var productionChart = new CanvasJS.Chart("product-chart", {
+var productionChart = new CanvasJS.Chart("production", {
 	animationEnabled: true,
 	title:{
 		text: "Produksi per tahun",

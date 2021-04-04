@@ -8,62 +8,39 @@
   <link rel="stylesheet" href="styles/my-styles.css" />
   <link rel="stylesheet" href="styles/mediaqueries.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
-
+  <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+  <script type="text/javascript" src=".//script/amchart.js"></script>
 
 </head>
 
 <body>
   <div class="full-height full-width">
-    <div class="col-3">
-      <div class="sidebar">
-        <div class="sidebar-logo">
-          <img src="./assets/images/icon.png" class="sidebar-logo-img" />
-        </div>
-        <a class="link active" id="beranda" href="#beranda">Beranda</a>
-        <a class="link" id="produk" href="#produk">Produk</a>
-        <a class="link" id="report" href="#report" onclick="displayTitle('Laporan')">Laporan</a>
-        <a class="link" id="kasir" href="#kasir" onclick="displayTitle('Help Desk')">Kasir</a>
-        <a class="link" id="logout" href="#logout" onclick="displayTitle('Keluar')">Keluar</a>
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <img src="./assets/images/icon.png" class="sidebar-logo-img" />
       </div>
+      <a class="link active" id="home" href="home.html">Beranda</a>
+      <a class="link" href="produk.html">Tambah Produk</a>
+      <a class="link">Laporan</a>
+      <a class="link">Help Desk</a>
     </div>
-    <span class="col-3 col-s-12 left ">
+    <span class="col-3 left ">
       <pre></pre>
     </span>
     <span class="col-9 left">
-      <div id="content"></div>
-      <!-- <canvas id="myChart"></canvas> -->
+      <span class="col-6 col-s-12 left">
+        <h2>Beranda</h2>
+        <div id="production" class=" chart-container"></div>
+      </span>
+      <span class="col-6 col-s-12 left">
+        <h2>&nbsp;</h2>
+        <div id="sell" class=" chart-container"></div>
+      </span>
+
     </span>
   </div>
-
-  <script type="text/javascript">
-    const linkArr = $('.link');
-    for (let i = 0; i < linkArr.length; i++) {
-      linkArr[i].addEventListener("click", function () {
-        const current = document.getElementsByClassName("active");
-        const element = $(linkArr[i]).attr('id');
-        const classname = $(linkArr[i]).attr('class');
-        if (classname.includes('active')) {
-          return;
-        }
-        $("#content").load(`home/${element}.html`);
-        if (current.length > 0) {
-          current[0].className = current[0].className.replace(" active", "");
-        }
-        linkArr[i].className += " active"
-      })
-
-    }
-    $(document).ready(function () {
-      $("#content").load(`home/beranda.html`);
-    })
-    function displayTitle(title) {
-      if (title == 'beranda') {
-        $("#content").load(`home/beranda.html`);
-      }
-    }
-  </script>
-
 </body>
 
 </html>

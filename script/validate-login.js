@@ -14,7 +14,7 @@ function validateLogin(formArray) {
       var username = document.getElementById("Username").value;
       var password = document.getElementById("Password").value;
       if (username == "admin" && password == "admin123") {
-        window.location.href = 'home.html'
+        window.location.href = 'home/beranda.html'
       }
       else {
         alert("Password/Username yang anda masukkan salah!");

@@ -2,25 +2,43 @@
 <html>
 
 <head>
-  <title>Masuk</title>
+  <title>Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-  <link rel="stylesheet" href=".//styles/my-styles.css" />
-  <link rel="stylesheet" href=".//styles/mediaqueries.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-  <script type="text/javascript" src=".//script/chart.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+  <script type="text/javascript" src="../script/amchart.js"></script>
+  <link rel="stylesheet" href="../styles/my-styles.css" />
+  <link rel="stylesheet" href="../styles/mediaqueries.css" />
+
 </head>
 
 <body>
   <div class="full-height full-width">
-    <span class="col-6 col-s-12 chart-container left">
-      <h2>Beranda</h2>
-      <div id="product-chart"></div>
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <img src="../assets/images/icon.png" class="sidebar-logo-img" />
+      </div>
+      <a class="link active" id="home" href="home.html">Beranda</a>
+      <a class="link" href="produk.html">Tambah Produk</a>
+      <a class="link">Laporan</a>
+      <a class="link">Help Desk</a>
+    </div>
+    <span class="col-3 left ">
+      <pre></pre>
     </span>
-    <span class="col-6 col-s-12 left">
-      <h2>&nbsp;</h2>
-      <div id="sell-chart"></div>
+    <span class="col-9 left">
+      <span class="col-6 col-s-12 left">
+        <h2>Beranda</h2>
+        <div id="production" class=" chart-container"></div>
+      </span>
+      <span class="col-6 col-s-12 left">
+        <h2>&nbsp;</h2>
+        <div id="sell" class=" chart-container"></div>
+      </span>
+
     </span>
   </div>
 </body>
