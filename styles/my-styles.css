@@ -14,6 +14,7 @@ body {
 }
 .display-flex {
   display: flex;
+  flex: 1;
 }
 * {
   font-family: "Poppins";
@@ -311,4 +312,11 @@ th {
 .styled-table tbody tr.active-row {
   font-weight: bold;
   color: rgba(255, 169, 68);
+}
+.row {
+  flex-direction: row;
+}
+.space-between {
+  align-items: center;
+  justify-content: space-between;
 }
