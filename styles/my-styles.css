@@ -73,7 +73,7 @@ body {
   font-size: 20px;
   font-weight: 800;
   color: rgb(0, 0, 0);
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 .form-container {
   display: flex;
@@ -86,36 +86,27 @@ body {
 .default-static-margin-bottom {
   margin-bottom: 25px;
 }
-.horizontal-margin {
-  margin: 0px 15px 0px 15px;
-}
-.input-margin-bottom {
-  margin-bottom: 8%;
-}
-form p {
-  margin: 1.5px;
-}
 label {
   font-size: 12px;
   position: absolute;
   transition: 0.2s;
   left: 15px;
-  top: 15px;
+  top: 16px;
 }
 ::-webkit-input-placeholder {
   opacity: 0;
   transition: inherit;
 }
-input:focus::-webkit-input-placeholder {
+.animated-input:focus::-webkit-input-placeholder {
   opacity: 1;
 }
 ul:not(.dropdown),
-input {
+.animated-input {
   background: none;
-  border: 1.3px solid #262626;
+  border: 1.3px solid #616161;
   border-radius: 6px;
   list-style: none;
-  padding: 15px 0px 15px 10px;
+  padding: 14px 0px 14px 10px;
 }
 ul:not(.dropdown) {
   margin: 0%;
@@ -134,7 +125,7 @@ ul:hover li ul {
 ul li ul {
   display: none;
 }
-input:focus {
+.animated-input:focus {
   outline: none;
   border: 1.5px solid #262626;
   background: none;
@@ -142,24 +133,23 @@ input:focus {
   border-radius: 6px;
   padding: 15px 0px 15px 10px;
 }
-input:placeholder-shown {
+.animated-input:placeholder-shown {
   color: transparent;
 }
-input:not(:placeholder-shown) + label,
-input:focus + label {
-  top: -20px;
+.animated-input:not(:placeholder-shown) + label,
+.animated-input:focus + label {
+  top: -24px;
   left: 0px;
 }
 
-.margin4 {
-  margin-top: 4%;
-}
 .btn {
   width: 100%;
   background-color: rgb(75, 223, 75);
   border: 0;
   font-size: 12px;
-  color: #0d0d0d;
+  color: #fff;
+  padding: 15px 0px 15px 10px;
+  border-radius: 12px;
 }
 
 input[type="submit"],
@@ -199,17 +189,11 @@ center {
 .error-text {
   color: red;
   font-size: 10px;
+  margin-bottom: 8%;
 }
 
 .button:hover {
   cursor: pointer;
-}
-
-#login-button {
-  background-color: rgb(221, 221, 221);
-}
-#login-button:hover {
-  background-color: rgb(207, 207, 207);
 }
 
 .link {
@@ -314,7 +298,7 @@ div.content {
 table,
 td,
 th {
-  text-align: center;
+  text-align: left !important;
   padding: 4px;
 }
 .styled-table {

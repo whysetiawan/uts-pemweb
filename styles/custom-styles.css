@@ -1,0 +1,82 @@
+.nav-item {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.nav-fill .nav-link {
+  text-align: left !important;
+}
+
+.background-primary {
+  background-color: rgba(255, 169, 68) !important;
+  border-color: rgba(255, 169, 68) !important;
+}
+
+.nav-pills .nav-link.active {
+  margin-left: 4px;
+  color: rgba(255, 169, 68) !important;
+  background-color: white !important;
+}
+
+.pagination > li > a {
+  background-color: white;
+  color: rgba(255, 169, 68);
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  color: #5a5a5a;
+  background-color: #eee;
+  border-color: #ddd;
+}
+
+.pagination > .active > a {
+  color: white;
+  background-color: rgba(255, 169, 68) !important;
+  border: solid 1px rgba(255, 169, 68) !important;
+}
+
+.pagination > .active > a:hover {
+  background-color: rgba(255, 169, 68) !important;
+  border: solid 1px rgba(255, 169, 68);
+}
+
+.text-white {
+  color: "white";
+}
+
+table,
+td,
+th {
+  text-align: left;
+  padding: 4px;
+}
+.styled-table {
+  border-collapse: collapse;
+  margin: 15px 0;
+  font-size: 0.9em;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+  background-color: rgba(255, 169, 68);
+  color: #ffffff;
+  text-align: left;
+}
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid rgba(255, 169, 68);
+}
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: rgba(255, 169, 68);
+}
